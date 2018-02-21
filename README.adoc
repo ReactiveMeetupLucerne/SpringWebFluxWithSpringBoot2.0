@@ -210,6 +210,81 @@ Do the three process find some common speed?
 What's the resulting common speed?
 |TODO
 |TODO
+
+|Question 12
+|Regarding performance.
+
+We have a producer (server) and a consumer (client).
+Both working at full speed.
+
+How many kb/sec are transported? How many objects/sec?
+|TODO
+|TODO
+
+|Question 13
+|Regarding latency.
+
+We have a producer (server) with a Mono (single value) and a consumer (client).
+
+What's the latency from subscription-time until the value is received?
+|TODO
+|TODO
+
+|Question 14
+|Regarding errors.
+
+We have a producer (server) with a Flux which delivers first 10 values and
+then one error, a RuntimeException("Boom").
+
+How does the error arrive at the client? Type, Stacktrace etc?
+|TODO
+|TODO
+
+|Question 15
+|Regarding errors.
+
+We have a producer (server) with a Flux which delivers first 10 values and
+then one error, a custom exception type "MyRuntimeException("Boom")".
+
+How does the error arrive at the client? Type, Stacktrace etc?
+|TODO
+|TODO
+
+|Question 16
+|Regarding errors.
+
+We have a producer (server) which produces an endless stream
+of values.
+
+The client processes the frist 10 values and then has an exception
+in his own "stream handling" (e.g. a RuntimeException in a map operator).
+
+Is the producer (server) notified by this? Does the producer (server) stop
+producing values? How many values does the producer (server) produce?
+|TODO
+|TODO
+
+|Question 17
+|Regarding errors.
+
+Same like question 16. But this time, the client "crashes" (Runtime#halt).
+
+Is the producer (server) notified by this? Does the producer (server) stop
+producing values? How many values does the producer (server) produce?
+|TODO
+|TODO
+
+|Question 18
+|Regarding errors.
+
+We have a producer (server) which produces an endless stream
+of values. But after 10 values, it crashes (Runtime#halt).
+
+How is the client notified by this?
+What kind of error does the client get?
+How many values does the client get?
+|TODO
+|TODO
 |===
 
 
