@@ -128,7 +128,7 @@ How many values does the server actually produce?
 How many values does the client actually receive?
 |When running the example for the first time, the server produces around 1013 values and then stops.
 The client gets exactly 1000 values. When I run the client example a couple more times,
-the server produces around 7000 values and then stops.
+the server produces around 7000 values and then stops. The client always gets exactly 1000 values.
 
 Works fine!
 |link:./src/main/java/question4/client/ClientApplication.java[ClientApplication.java]
