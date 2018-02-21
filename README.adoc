@@ -179,7 +179,7 @@ With "buffer size" I think of number of objects or number of bytes on the networ
 |Question 9
 |Regarding flow-control.
 
-Slow producer (server), fast consumer (client). Is the client somehow blocked?
+Slow producer (server), fast consumer (client). Is the consumer (client) somehow blocked?
 E.g. a thread wasted?
 |TODO
 |TODO
@@ -187,11 +187,11 @@ E.g. a thread wasted?
 |Question 10
 |Regarding flow-control.
 
-A client zips two Flux from 1 server together. The two Flux
+A client zips two Flux from a server together. The two Flux
 work on a different speed: One Flux works at full speed, the second Flux
 emits only one value every 100ms.
 
-Does the fast server Flux eventually react on that and starts producing fewer values per time?
+Does the faster server Flux eventually react on that and start producing fewer values per time?
 |TODO
 |TODO
 
@@ -201,12 +201,13 @@ Does the fast server Flux eventually react on that and starts producing fewer va
 We have 3 processes involved: A fake persistence process (think of a database),
 an API gateway process and a client process.
 
-The three process work at different speeds: The client is very slow
+The three processes work at different speeds: The client is very slow
 and can only process one value per 100ms. The API gateway process has a bad day
 and can only process one value per 50ms. The fake persistence process works at full speed.
 
 Do the faster producers eventually react on the slower consumers?
 Do the three process find some common speed?
+What's the resulting common speed?
 |TODO
 |TODO
 |===
