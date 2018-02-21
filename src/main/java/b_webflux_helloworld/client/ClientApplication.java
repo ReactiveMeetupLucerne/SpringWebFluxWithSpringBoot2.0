@@ -1,7 +1,6 @@
 package b_webflux_helloworld.client;
 
 import b_webflux_helloworld.shared.TextDto;
-import io.reactivex.Single;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,10 +13,12 @@ import java.util.concurrent.TimeUnit;
 @SpringBootApplication
 public class ClientApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         new SpringApplicationBuilder(ClientApplication.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
+
+        TimeUnit.SECONDS.sleep(10); // keep the JVM alive
     }
 
     @Bean
@@ -46,9 +47,6 @@ public class ClientApplication {
                             Throwable::printStackTrace,
                             () -> System.out.println("Fertig")
                     );
-
-            Single.timer(10, TimeUnit.SECONDS)
-                    .subscribe(ticker -> System.exit(0));
         };
     }
 
