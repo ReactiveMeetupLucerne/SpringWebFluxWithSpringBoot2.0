@@ -120,7 +120,7 @@ from link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.jav
 |Question 4
 |Regarding cancellation.
 
-A server-side producer creates a Flux with 10'000 values. But the client only
+A server-side producer creates a Flux with 1'000'000 values. But the client only
 takes 1'000 of them (using the take(1000) operator).
 
 How many values does the server actually produce?
@@ -138,6 +138,7 @@ with a delay of 2 seconds.
 The client aborts its call after 1 second using the timeout operator.
 
 Is the cancellation of the client propagated "in time" to the server?
+Is the delayed creation of the value on the server-side aborted?
 |TODO
 |TODO
 
@@ -226,7 +227,7 @@ How many kb/sec are transported? How many objects/sec?
 
 We have a producer (server) with a Mono (single value) and a consumer (client).
 
-What's the latency from subscription-time until the value is received?
+What's the approx. latency from subscription-time until the value is received?
 |TODO
 |TODO
 
@@ -244,7 +245,7 @@ How does the error arrive at the client? Type, Stacktrace etc?
 |Regarding errors.
 
 We have a producer (server) with a Flux which delivers first 10 values and
-then one error, a custom exception type "MyRuntimeException("Boom")".
+then one error, an exception with a custom data type "MyRuntimeException("Boom")".
 
 How does the error arrive at the client? Type, Stacktrace etc?
 |TODO
@@ -267,7 +268,7 @@ producing values? How many values does the producer (server) produce?
 |Question 17
 |Regarding errors.
 
-Same like question 16. But this time, the client "crashes" (Runtime#halt).
+Same like question 16. But this time, the client "crashes" (Runtime#halt), instead of the server.
 
 Is the producer (server) notified by this? Does the producer (server) stop
 producing values? How many values does the producer (server) produce?
