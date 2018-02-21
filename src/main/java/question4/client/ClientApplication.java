@@ -1,6 +1,5 @@
-package b_webflux_helloworld.client;
+package question4.client;
 
-import b_webflux_helloworld.shared.TextDto;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,20 +27,10 @@ public class ClientApplication {
 
             webClient
                     .get()
-                    .uri("/restcontroller/reactor/helloworld")
+                    .uri("/question4/millionvalues")
                     .retrieve()
                     .bodyToFlux(String.class)
-                    .subscribe(
-                            System.out::println,
-                            Throwable::printStackTrace,
-                            () -> System.out.println("Fertig")
-                    );
-
-            webClient
-                    .get()
-                    .uri("/restcontroller/reactor/helloworlddto")
-                    .retrieve()
-                    .bodyToMono(TextDto.class)
+                    .take(1000)
                     .subscribe(
                             System.out::println,
                             Throwable::printStackTrace,
