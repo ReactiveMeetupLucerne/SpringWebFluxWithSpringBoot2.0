@@ -126,9 +126,12 @@ takes 1'000 of them (using the take(1000) operator).
 How many values does the server actually produce?
 
 How many values does the client actually receive?
-|TODO
-|TODO
+|When running the example, the server produces 1013 values and then stops.
+The client gets exactly 1000 values.
 
+Works fine!
+|link:./src/main/java/question4/client/ClientApplication.java[ClientApplication.java]
+link:./src/main/java/question4/server/ServerApplication.java[ServerApplication.java]
 |Question 5
 |Regarding timeouts/cancellation.
 
