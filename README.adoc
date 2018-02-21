@@ -15,7 +15,7 @@ Important for us were especially the libraries implementing the reactive streams
 http://www.reactive-streams.org: https://github.com/ReactiveX/RxJava[RxJava], https://projectreactor.io/[Reactor] and https://akka.io/docs/[Akka-Streams].
 
 With the availability of Spring WebFlux in Spring 5 (Fall 2017) and Spring Boot 2.0 (Spring 2018),
-there is now one of the first "big main-stream" implementations available to do "reactive inter-process communication".
+there is now one of the first "big main-stream" implementations available to do "reactive *inter-process* communication".
 
 Spring WebFlux embraces fully Reactor and RxJava, but not Akka-Streams.
 
