@@ -119,6 +119,7 @@ public class ServerApplication {
                                 )
                 )
         );
+        // hint: this looks much better using Kotlin. See counterRouter() in https://todd.ginsberg.com/post/springboot2-reactive-kotlin/
     }
 
     @NotNull

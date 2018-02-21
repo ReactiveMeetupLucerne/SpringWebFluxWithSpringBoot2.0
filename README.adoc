@@ -67,6 +67,8 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 === Learning material
 
 * On Spring WebFlux / Spring Boot
+** https://spring.io/blog/2017/03/15/spring-tips-the-spring-web-flux-reactive-client
+** https://todd.ginsberg.com/post/springboot2-reactive-kotlin/
 ** https://spring.io/guides/gs/reactive-rest-service/
 ** https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux
 * On Reactor
