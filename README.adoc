@@ -162,7 +162,51 @@ Is there some kind of two-way communication using e.g. HTTP/2?
 Or some kind of backpressure on the network level (TCP)?
 
 See https://stackoverflow.com/questions/41772711/backpressure-for-rest-endpoints-with-spring-functional-web-framework#comment70845288_41825959
-and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) for some hints
+and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) for some hints.
+|TODO
+|TODO
+
+|Question 8
+|Regarding flow-control.
+
+Assuming there is some kind of buffering used internally as solution in question 6.
+Is there a way to configure the "buffer size"?
+
+With "buffer size" I think of number of objects or number of bytes on the network level.
+|TODO
+|TODO
+
+|Question 9
+|Regarding flow-control.
+
+Slow producer (server), fast consumer (client). Is the client somehow blocked?
+E.g. a thread wasted?
+|TODO
+|TODO
+
+|Question 10
+|Regarding flow-control.
+
+A client zips two Flux from 1 server together. The two Flux
+work on a different speed: One Flux works at full speed, the second Flux
+emits only one value every 100ms.
+
+Does the fast server Flux eventually react on that and starts producing fewer values per time?
+|TODO
+|TODO
+
+|Question 11
+|Regarding flow-control.
+
+We have 3 processes involved: A fake persistence process (think of a database),
+an API gateway process and a client process.
+
+The three process work at different speeds: The client is very slow
+and can only process one value per 100ms. The API gateway process has a bad day
+and can only process one value per 50ms. The fake persistence process works at full speed.
+
+Do the faster producers eventually react on the slower consumers?
+Do the three process find some common speed?
 |TODO
 |TODO
 |===
