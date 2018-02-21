@@ -78,6 +78,8 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 ** https://www.infoq.com/articles/rxjava-by-example
 ** http://reactivex.io/
 ** https://www.pluralsight.com/courses/reactive-programming-java-8-rxjava
+** https://www.youtube.com/watch?v=KUoFMCglRlY[Tomasz Nurkiewicz - RxJava in legacy projects]
+** http://shop.oreilly.com/product/0636920042228.do[Reactive Programming with RxJava]
 
 == Questions
 
