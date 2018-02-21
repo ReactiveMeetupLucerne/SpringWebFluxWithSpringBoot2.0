@@ -18,13 +18,23 @@ public class ClientApplication {
 
     @Bean
     ApplicationRunner runner() {
-        return args -> WebClient
-                .create("http://localhost:8080")
-                .get()
-                .uri("/reactor/restcontroller/helloworld")
-                .retrieve()
-                .bodyToFlux(String.class)
-                .subscribe(System.out::println);
+        return args -> {
+            WebClient webClient = WebClient.create("http://localhost:8080");
+
+            webClient
+                    .get()
+                    .uri("/reactor/restcontroller/helloworld")
+                    .retrieve()
+                    .bodyToFlux(String.class)
+                    .subscribe(System.out::println);
+
+            webClient
+                    .get()
+                    .uri("/reactor/restcontroller/helloworlddto")
+                    .retrieve()
+                    .bodyToMono(TextDto.class)
+                    .subscribe(System.out::println);
+        };
     }
 
 }
