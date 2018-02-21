@@ -112,8 +112,8 @@ In addition to question 1: What mechanism uses Spring WebFlux to marshal/unmarsh
 Can you create an example showing how to fetch the price for the flight,
 the hotel and the car "in parallel"?
 
-Is this somehow different than in the "inside same process" example
-from link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
+Is this "inter-process" somehow different than in the "inside same process" example
+from link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]?
 |TODO
 |TODO
 
