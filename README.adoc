@@ -90,52 +90,35 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 |# |Question |Answer |Code example(s)
 
 |Question 1
-|In the hello world example, there is an object of the type TextDto transported between the two processes.
+|Regarding serialization
+In the hello world example, there is an object of the type TextDto transported between the two processes.
 
- What are the requirements for a data type to be transported? (e.g. must implement Serializable? or must follow the JavaBean convention (setter/getter)?)
+ What are the requirements for a data type to be transported? e.g. must implement Serializable?
+ or e.g. must follow the JavaBean convention (setter/getter)?
 |TODO
 |TODO link:./src/main/java/question1/Question1Examples.java[Question1Examples.java]
 
 |Question 2
-|In the hello world example, there is an object of the type TextDto transported between the two processes.
+|Regarding serialization
+In the hello world example, there is an object of the type TextDto transported between the two processes.
 
  What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
 |TODO
 |TODO
 
-|Column 1, row 2
-|Column 2, row 2
-|Column 3, row 2
-|Column 4, row 2
+|Question 3
+|Regarding "compose-ability".
+Can you create an example showing how to fetch the price for the flight,
+the hotel and the car "in parallel"? Is this somehow different than in the "inside same process" example
+in link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
+|TODO
+|TODO
 
 |Column 1, row 3
 |Column 2, row 3
 |Column 3, row 3
 |Column 4, row 3
 |===
-
-
-==== Question 1: Transported data types?
-
-In the hello world example, there is an object of the type TextDto transported between the two processes.
-
-* What are the requirements for a data type to be transported? (e.g. must implement Serializable? or must follow the JavaBean convention (setter/getter)?)
-* What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
-
-===== Answer
-
-TODO
-
-===== Code example
-
-TODO link:./src/main/java/question1/Question1Examples.java[Question1Examples.java]
-
-==== Question 2: Transported data types?
-
-In the hello world example, there is an object of the type TextDto transported between the two processes.
-
-* What are the requirements for a data type to be transported? (e.g. must implement Serializable? or must follow the JavaBean convention (setter/getter)?)
-* What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
 
 
 === Questions regarding "reactive inter-process communication" between a JVM process and a webbrowser process
