@@ -1,0 +1,72 @@
+= "Reactive inter-process communication" with Spring WebFlux and Spring Boot 2.0
+Reactive Meetup Lucerne https://www.meetup.com/de-DE/Luzern-reactive-concurrent-distributed-solutions-on-the-JVM/
+:imagesdir: ./docs
+
+== Introduction
+
+We are a group of software developers with a more or less monthly meetup in https://goo.gl/maps/NpfJhDWsCnw[Lucerne (Switzerland)].
+We are interested in programming questions around concurrency, distributed systems, consistency...
+
+We did some learning using different kinds of async non-blocking programming models and libraries
+to communicate between objects / functions *inside the same JVM process* in 2017,
+see https://github.com/ReactiveMeetupLucerne/AsyncNonBlockingExamplesJVM for the results.
+
+Important techniques were especially the libraries implementing the reactive streams interfaces
+http://www.reactive-streams.org: RxJava, Reactor and Akka-Streams.
+
+With the availability of Spring WebFlux in Spring 5 (Fall 2017) and Spring Boot 2.0 (Spring 2018),
+there is now one of the first "big main-stream" implementations available to do "reactive inter-process communication".
+
+Spring WebFlux embraces fully Reactor and RxJava, but not Akka-Streams.
+
+To figure out how Spring WebFlux works, we defined some questions regarding features, behaviour and performance.
+We try to answer these questions by providing working code examples and share the solutions.
+
+Have fun in viewing the results and feel free to provide feedback, improvements or contributions via GitHub issues and pull requests.
+
+Sincerly, +
+the participating members of the https://www.meetup.com/de-DE/Luzern-reactive-concurrent-distributed-solutions-on-the-JVM/[Lucerne reactive meetup group]
+
+== Goals for us
+
+* Get some more exercise using Reactor and RxJava
+* Get first impressions about how to use Spring WebFlux and Spring Boot 2.0
+* Try to get a deeper understanding by asking and answering questions
+* Have fun
+
+
+== Getting started
+
+=== Reactive communication inside the same process
+
+The "reactive" libraries for the JVM like Reactor or RxJava offer a lot of power to implement
+parallelism, flow-control, backpressure handling, etc. Think of Java 8 CompletableFuture mixed
+with Java 8 Streams, but on steroids.
+
+See e.g. https://github.com/ReactiveMeetupLucerne/AsyncNonBlockingExamplesJVM,
+https://www.infoq.com/articles/rxjava-by-example
+or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples] for some examples.
+
+=== "Reactive inter-process communication" between two JVM processes
+
+* Reactive hello world server
+** link:./src/main/java/b_webflux_helloworld/server/ServerApplication.java[ServerApplication]
+
+* Reactive hello world client
+** link:./src/main/java/b_webflux_helloworld/client/ClientApplication.java[ClientApplication]
+
+== Questions
+
+=== Questions regarding "reactive inter-process communication" between two JVM processes
+
+==== Question 1: Transported data types?
+
+In the hello world example, there is an object of the type TextDto transported between the two processes.
+
+* What are the requirements for a data type to be transported? (e.g. must implement Serializable? or e.g. must follow the JavaBean convention (setter/getter)?)
+* What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
+
+=== Questions regarding "reactive inter-process communication" between a JVM process and a webbrowser process
+
+TODO
+
