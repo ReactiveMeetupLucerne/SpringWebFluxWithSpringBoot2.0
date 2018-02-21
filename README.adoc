@@ -90,7 +90,8 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 |# |Question |Answer |Code example(s)
 
 |Question 1
-|Regarding serialization
+|Regarding serialization.
+
 In the hello world example, there is an object of the type TextDto transported between the two processes.
 
  What are the requirements for a data type to be transported? e.g. must implement Serializable?
@@ -99,7 +100,8 @@ In the hello world example, there is an object of the type TextDto transported b
 |TODO link:./src/main/java/question1/Question1Examples.java[Question1Examples.java]
 
 |Question 2
-|Regarding serialization
+|Regarding serialization.
+
 In the hello world example, there is an object of the type TextDto transported between the two processes.
 
  What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
@@ -108,16 +110,54 @@ In the hello world example, there is an object of the type TextDto transported b
 
 |Question 3
 |Regarding "compose-ability".
+
 Can you create an example showing how to fetch the price for the flight,
-the hotel and the car "in parallel"? Is this somehow different than in the "inside same process" example
-in link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
+the hotel and the car "in parallel"?
+
+Is this somehow different than in the "inside same process" example
+from link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 |TODO
 |TODO
 
-|Column 1, row 3
-|Column 2, row 3
-|Column 3, row 3
-|Column 4, row 3
+|Question 4
+|Regarding cancellation.
+
+A server-side producer creates a Flux with 10'000 values. But the client only
+takes 1'000 of them (using the take(1000) operator).
+
+How many values does the server actually produce?
+|TODO
+|TODO
+
+|Question 5
+|Regarding timeouts/cancellation.
+
+A server-side producer creates a Mono with 1 value, but the value is produced
+with a delay of 2 seconds. The client aborts its call after 1 second using the timeout operator.
+Is the cancellation of the client propagated "in time" to the server?
+|TODO
+|TODO
+
+|Question 6
+|Regarding flow-control.
+
+There is a fast producer on the server side and a slow client.
+The slow client can only process 1 value every 100ms.
+
+Does the producer react on this and eventually start producing fewer values per time?
+Do server and client find some common pace?
+|TODO
+|TODO
+
+|Question 7
+|Regarding flow-control.
+
+How is the flow-control from question 6 implemented?
+
+See https://stackoverflow.com/questions/41772711/backpressure-for-rest-endpoints-with-spring-functional-web-framework#comment70845288_41825959
+and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) for some hints
+|TODO
+|TODO
 |===
 
 
