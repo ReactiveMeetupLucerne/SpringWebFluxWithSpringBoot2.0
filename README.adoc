@@ -77,6 +77,7 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 * On RxJava
 ** https://www.infoq.com/articles/rxjava-by-example
 ** http://reactivex.io/
+** https://www.pluralsight.com/courses/reactive-programming-java-8-rxjava
 
 == Questions
 
