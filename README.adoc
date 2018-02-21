@@ -34,7 +34,6 @@ the participating members of the https://www.meetup.com/de-DE/Luzern-reactive-co
 * Try to get a deeper understanding by asking and answering questions
 * Have fun
 
-
 == Getting started
 
 === Reactive communication inside the same process
@@ -47,7 +46,7 @@ See e.g. https://github.com/ReactiveMeetupLucerne/AsyncNonBlockingExamplesJVM,
 https://www.infoq.com/articles/rxjava-by-example
 or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java] for some examples.
 
-=== "Reactive inter-process communication" between two JVM processes
+=== Hello world "reactive inter-process communication" between two JVM processes
 
 * Reactive hello world server
 ** link:./src/main/java/b_webflux_helloworld/server/ServerApplication.java[ServerApplication.java]
@@ -64,6 +63,16 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 ** http://localhost:8080/restcontroller/rxjava2/helloworlddto
 ** http://localhost:8080/routerfunction/helloworld
 ** http://localhost:8080/routerfunction/helloworlddto
+
+=== Learning material
+
+* On Spring WebFlux / Spring Boot
+** https://spring.io/guides/gs/reactive-rest-service/
+** https://docs.spring.io/spring/docs/5.0.4.RELEASE/spring-framework-reference/web-reactive.html#spring-webflux
+* On Reactor
+** https://projectreactor.io/docs/core/release/reference/
+* On RxJava
+** http://reactivex.io/
 
 == Questions
 
