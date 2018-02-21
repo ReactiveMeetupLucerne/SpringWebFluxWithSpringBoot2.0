@@ -24,12 +24,22 @@ public class Q1Client {
         return args -> {
             WebClient webClient = WebClient.create("http://localhost:8080");
 
+            // Just works:
             webClient
                     .get()
-                    .uri("/not-serializable")
+                    .uri("/javabean-field")
                     .retrieve()
-                    .bodyToFlux(FoobarNotSerializable.class)
+                    .bodyToFlux(JavaBeanFoobar.class)
                     .subscribe(System.out::println);
+
+            // Throws exception on the server side:
+            webClient
+                    .get()
+                    .uri("/private-field")
+                    .retrieve()
+                    .bodyToFlux(PrivateFieldFoobar.class)
+                    .subscribe(System.out::println);
+
 
             Single.timer(10, TimeUnit.SECONDS)
                     .subscribe(ticker -> System.exit(0));
