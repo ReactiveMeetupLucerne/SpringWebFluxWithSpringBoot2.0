@@ -68,7 +68,7 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 
 * On Spring WebFlux / Spring Boot
 ** https://spring.io/guides/gs/reactive-rest-service/
-** https://docs.spring.io/spring/docs/5.0.4.RELEASE/spring-framework-reference/web-reactive.html#spring-webflux
+** https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux
 * On Reactor
 ** https://projectreactor.io/docs/core/release/reference/
 * On RxJava
