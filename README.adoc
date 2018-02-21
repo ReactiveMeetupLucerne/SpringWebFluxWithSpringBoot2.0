@@ -133,7 +133,10 @@ How many values does the client actually receive?
 |Regarding timeouts/cancellation.
 
 A server-side producer creates a Mono with 1 value, but the value is produced
-with a delay of 2 seconds. The client aborts its call after 1 second using the timeout operator.
+with a delay of 2 seconds.
+
+The client aborts its call after 1 second using the timeout operator.
+
 Is the cancellation of the client propagated "in time" to the server?
 |TODO
 |TODO
@@ -143,6 +146,7 @@ Is the cancellation of the client propagated "in time" to the server?
 
 There is a fast producer on the server side and a slow client.
 The slow client can only process 1 value every 100ms.
+The producer works at "full speed".
 
 Does the producer react on this and eventually start producing fewer values per time?
 Do server and client find some common pace?
