@@ -22,7 +22,7 @@ Spring WebFlux embraces fully Reactor and RxJava, but not Akka-Streams.
 To figure out how Spring WebFlux works, we defined some questions regarding features, behaviour and performance.
 We try to answer these questions by providing working code examples and share the solutions.
 
-Have fun in viewing the results and feel free to provide feedback, improvements or contributions via GitHub issues and pull requests.
+Have fun viewing the results and feel free to provide feedback, improvements or contributions via GitHub issues and pull requests.
 
 Sincerly, +
 the participating members of the https://www.meetup.com/de-DE/Luzern-reactive-concurrent-distributed-solutions-on-the-JVM/[Lucerne reactive meetup group]
@@ -54,6 +54,16 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 
 * Reactive hello world client
 ** link:./src/main/java/b_webflux_helloworld/client/ClientApplication.java[ClientApplication.java]
+
+* Links for the browser as a client
+** http://localhost:8080/restcontroller/reactor/helloworld
+** http://localhost:8080/restcontroller/reactor/helloworldslow
+** http://localhost:8080/restcontroller/reactor/helloworlddto
+** http://localhost:8080/restcontroller/rxjava2/helloworld
+** http://localhost:8080/restcontroller/rxjava2/helloworldslow
+** http://localhost:8080/restcontroller/rxjava2/helloworlddto
+** http://localhost:8080/routerfunction/helloworld
+** http://localhost:8080/routerfunction/helloworlddto
 
 == Questions
 
