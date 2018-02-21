@@ -96,8 +96,8 @@ In the hello world example, there is an object of the type `TextDto` transported
 
 What are the requirements for a data type to be transported? e.g. must implement Serializable?
 or e.g. must follow the JavaBean convention (setter/getter)?
-|TODO
-|TODO link:./src/main/java/question1/Question1Examples.java[Question1Examples.java]
+|It must be Serializable
+|link:./src/main/java/question1/Q1Client.java[Q1Client.java] link:./src/main/java/question1/Q1Server.java[Q1Server.java]
 
 |Question 2
 |Regarding serialization.
