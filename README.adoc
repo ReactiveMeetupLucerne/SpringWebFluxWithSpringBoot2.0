@@ -11,8 +11,8 @@ We did some learning using different kinds of async non-blocking programming mod
 to communicate between objects / functions *inside the same JVM process* in 2017,
 see https://github.com/ReactiveMeetupLucerne/AsyncNonBlockingExamplesJVM for the results.
 
-Important techniques were especially the libraries implementing the reactive streams interfaces
-http://www.reactive-streams.org: RxJava, Reactor and Akka-Streams.
+Important for us were especially the libraries implementing the reactive streams interfaces
+http://www.reactive-streams.org: https://github.com/ReactiveX/RxJava[RxJava], https://projectreactor.io/[Reactor] and https://akka.io/docs/[Akka-Streams].
 
 With the availability of Spring WebFlux in Spring 5 (Fall 2017) and Spring Boot 2.0 (Spring 2018),
 there is now one of the first "big main-stream" implementations available to do "reactive inter-process communication".
@@ -45,15 +45,15 @@ with Java 8 Streams, but on steroids.
 
 See e.g. https://github.com/ReactiveMeetupLucerne/AsyncNonBlockingExamplesJVM,
 https://www.infoq.com/articles/rxjava-by-example
-or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples] for some examples.
+or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java] for some examples.
 
 === "Reactive inter-process communication" between two JVM processes
 
 * Reactive hello world server
-** link:./src/main/java/b_webflux_helloworld/server/ServerApplication.java[ServerApplication]
+** link:./src/main/java/b_webflux_helloworld/server/ServerApplication.java[ServerApplication.java]
 
 * Reactive hello world client
-** link:./src/main/java/b_webflux_helloworld/client/ClientApplication.java[ClientApplication]
+** link:./src/main/java/b_webflux_helloworld/client/ClientApplication.java[ClientApplication.java]
 
 == Questions
 
@@ -63,8 +63,18 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples] for 
 
 In the hello world example, there is an object of the type TextDto transported between the two processes.
 
-* What are the requirements for a data type to be transported? (e.g. must implement Serializable? or e.g. must follow the JavaBean convention (setter/getter)?)
+* What are the requirements for a data type to be transported? (e.g. must implement Serializable? or must follow the JavaBean convention (setter/getter)?)
 * What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
+
+===== Answer
+
+TODO
+
+===== Code example
+
+TODO
+
+link:./src/main/java/question1/Question1Examples.java[Question1Examples.java]
 
 === Questions regarding "reactive inter-process communication" between a JVM process and a webbrowser process
 
