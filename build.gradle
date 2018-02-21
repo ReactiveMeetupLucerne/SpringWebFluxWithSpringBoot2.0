@@ -76,5 +76,5 @@ compileTestJava {
 
 //https://docs.spring.io/spring-boot/docs/2.0.0.BUILD-SNAPSHOT/gradle-plugin/reference/html/
 springBoot {
-    mainClassName = 'b_webflux_helloworld.ServerApplication'
+    mainClassName = 'b_webflux_helloworld.server.ServerApplication'
 }

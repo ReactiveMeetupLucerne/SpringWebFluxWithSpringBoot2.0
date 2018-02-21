@@ -1,5 +1,6 @@
-package b_webflux_helloworld;
+package b_webflux_helloworld.client;
 
+import b_webflux_helloworld.shared.TextDto;
 import io.reactivex.Single;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.WebApplicationType;
@@ -26,14 +27,14 @@ public class ClientApplication {
 
             webClient
                     .get()
-                    .uri("/reactor/restcontroller/helloworld")
+                    .uri("/restcontroller/reactor/helloworld")
                     .retrieve()
                     .bodyToFlux(String.class)
                     .subscribe(System.out::println);
 
             webClient
                     .get()
-                    .uri("/reactor/restcontroller/helloworlddto")
+                    .uri("/restcontroller/reactor/helloworlddto")
                     .retrieve()
                     .bodyToMono(TextDto.class)
                     .subscribe(System.out::println);
