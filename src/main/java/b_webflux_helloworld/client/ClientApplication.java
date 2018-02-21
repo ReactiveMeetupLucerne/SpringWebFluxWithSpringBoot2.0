@@ -30,14 +30,22 @@ public class ClientApplication {
                     .uri("/restcontroller/reactor/helloworld")
                     .retrieve()
                     .bodyToFlux(String.class)
-                    .subscribe(System.out::println);
+                    .subscribe(
+                            System.out::println,
+                            Throwable::printStackTrace,
+                            () -> System.out.println("Fertig")
+                    );
 
             webClient
                     .get()
                     .uri("/restcontroller/reactor/helloworlddto")
                     .retrieve()
                     .bodyToMono(TextDto.class)
-                    .subscribe(System.out::println);
+                    .subscribe(
+                            System.out::println,
+                            Throwable::printStackTrace,
+                            () -> System.out.println("Fertig")
+                    );
 
             Single.timer(10, TimeUnit.SECONDS)
                     .subscribe(ticker -> System.exit(0));
