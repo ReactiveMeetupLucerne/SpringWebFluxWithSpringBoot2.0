@@ -73,3 +73,7 @@ compileJava {
 compileTestJava {
     options.encoding = fileEncoding
 }
+
+springBoot {
+    mainClassName = 'b_webflux_helloworld.ServerApplication'
+}
