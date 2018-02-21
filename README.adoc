@@ -92,11 +92,16 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 |Question 1
 |In the hello world example, there is an object of the type TextDto transported between the two processes.
 
- * What are the requirements for a data type to be transported? (e.g. must implement Serializable? or must follow the JavaBean convention (setter/getter)?)
- * What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
-
+ What are the requirements for a data type to be transported? (e.g. must implement Serializable? or must follow the JavaBean convention (setter/getter)?)
 |TODO
 |TODO link:./src/main/java/question1/Question1Examples.java[Question1Examples.java]
+
+|Question 2
+|In the hello world example, there is an object of the type TextDto transported between the two processes.
+
+ What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
+|TODO
+|TODO
 
 |Column 1, row 2
 |Column 2, row 2
