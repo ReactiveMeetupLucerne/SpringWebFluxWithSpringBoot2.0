@@ -73,7 +73,9 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 ** https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux
 * On Reactor
 ** https://projectreactor.io/docs/core/release/reference/
+** https://www.infoq.com/articles/reactor-by-example
 * On RxJava
+** https://www.infoq.com/articles/rxjava-by-example
 ** http://reactivex.io/
 
 == Questions
