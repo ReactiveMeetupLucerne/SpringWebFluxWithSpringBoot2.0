@@ -158,6 +158,9 @@ Do server and client find some common pace?
 
 How is the flow-control from question 6 implemented?
 
+Is there some kind of two-way communication using e.g. HTTP/2?
+Or some kind of backpressure on the network level (TCP)?
+
 See https://stackoverflow.com/questions/41772711/backpressure-for-rest-endpoints-with-spring-functional-web-framework#comment70845288_41825959
 and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) for some hints
 |TODO
