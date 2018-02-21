@@ -20,7 +20,7 @@ there is now one of the first "big main-stream" implementations available to do 
 Spring WebFlux embraces fully Reactor and RxJava, but not Akka-Streams.
 
 To figure out how Spring WebFlux works, we defined some questions regarding features, behaviour and performance.
-We try to answer these questions by providing working code examples and share the solutions.
+We try to answer these questions by providing working code examples.
 
 Have fun viewing the results and feel free to provide feedback, improvements or contributions via GitHub issues and pull requests.
 
@@ -92,7 +92,7 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 |Question 1
 |Regarding serialization.
 
-In the hello world example, there is an object of the type TextDto transported between the two processes.
+In the hello world example, there is an object of the type `TextDto` transported between the two processes.
 
 What are the requirements for a data type to be transported? e.g. must implement Serializable?
 or e.g. must follow the JavaBean convention (setter/getter)?
