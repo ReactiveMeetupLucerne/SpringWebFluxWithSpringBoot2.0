@@ -4,7 +4,6 @@ import b_webflux_helloworld.shared.TextDto;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -122,7 +121,6 @@ public class ServerApplication {
         // hint: this looks much better using Kotlin. See counterRouter() in https://todd.ginsberg.com/post/springboot2-reactive-kotlin/
     }
 
-    @NotNull
     private Flux<String> helloWorldCharacterFlux() {
         return Flux.zip(
                 Flux.concat(
