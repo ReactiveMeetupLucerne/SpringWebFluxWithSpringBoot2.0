@@ -33,12 +33,14 @@ public class Q1Client {
                     .subscribe(System.out::println);
 
             // Throws exception on the server side:
+/*
             webClient
                     .get()
                     .uri("/private-field")
                     .retrieve()
                     .bodyToFlux(PrivateFieldFoobar.class)
                     .subscribe(System.out::println);
+*/
 
 
             Single.timer(10, TimeUnit.SECONDS)
