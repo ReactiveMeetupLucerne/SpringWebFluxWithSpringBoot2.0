@@ -155,8 +155,10 @@ The producer works at "full speed".
 
 Does the producer react on this and eventually start producing fewer values per time?
 Do server and client find some common pace?
-|TODO
-|TODO
+|The producer reacts on this snail, but only 'cause the tcp-buffer is full. If the buffer frees the lock,
+the producer continous producing at full speed until the buffer is full again.
+|link:./src/main/java/question6/client/ClientApplication.java[ClientApplication.java]
+ link:./src/main/java/question6/server/ServerApplication.java[ServerApplication.java]
 
 |7
 |Regarding flow-control.
