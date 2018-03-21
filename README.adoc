@@ -85,11 +85,11 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 
 === Questions regarding "reactive inter-process communication" between two JVM processes
 
-
+[cols="1,5,5,2"]
 |===
 |# |Question |Answer |Code example(s)
 
-|Question 1
+|1
 |Regarding serialization.
 
 In the hello world example, there is an object of the type `TextDto` transported between the two processes.
@@ -99,14 +99,14 @@ or e.g. must follow the JavaBean convention (setter/getter)?
 |It must be Serializable or JavaBean
 |link:./src/main/java/question1/Q1Client.java[Q1Client.java] link:./src/main/java/question1/server/Q1Server.java[Q1Server.java]
 
-|Question 2
+|2
 |Regarding serialization.
 
 In addition to question 1: What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
 |TODO
 |TODO
 
-|Question 3
+|3
 |Regarding "compose-ability".
 
 Can you create an example showing how to fetch the price for the flight,
@@ -117,7 +117,7 @@ from link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.jav
 |TODO
 |TODO
 
-|Question 4
+|4
 |Regarding cancellation.
 
 A server-side producer creates a Flux with 1'000'000 values. But the client only
@@ -133,7 +133,7 @@ the server produces around 7000 values and then stops. The client always gets ex
 Works fine!
 |link:./src/main/java/question4/client/ClientApplication.java[ClientApplication.java]
 link:./src/main/java/question4/server/ServerApplication.java[ServerApplication.java]
-|Question 5
+|5
 |Regarding timeouts/cancellation.
 
 A server-side producer creates a Mono with 1 value, but the value is produced
@@ -146,7 +146,7 @@ Is the delayed creation of the value on the server-side aborted?
 |TODO
 |TODO
 
-|Question 6
+|6
 |Regarding flow-control.
 
 There is a fast producer on the server side and a slow client.
@@ -158,7 +158,7 @@ Do server and client find some common pace?
 |TODO
 |TODO
 
-|Question 7
+|7
 |Regarding flow-control.
 
 How is the flow-control from question 6 implemented?
@@ -171,7 +171,7 @@ and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) 
 |TODO
 |TODO
 
-|Question 8
+|8
 |Regarding flow-control.
 
 Assuming there is some kind of buffering used internally as solution in question 6.
@@ -181,7 +181,7 @@ With "buffer size" I think of number of objects or number of bytes on the networ
 |TODO
 |TODO
 
-|Question 9
+|9
 |Regarding flow-control.
 
 Slow producer (server), fast consumer (client). Is the consumer (client) somehow blocked?
@@ -189,7 +189,7 @@ E.g. a thread wasted?
 |TODO
 |TODO
 
-|Question 10
+|10
 |Regarding flow-control.
 
 A client zips two Flux from a server together. The two Flux
@@ -200,7 +200,7 @@ Does the faster server Flux eventually react on that and start producing fewer v
 |TODO
 |TODO
 
-|Question 11
+|11
 |Regarding flow-control.
 
 We have 3 processes involved: A fake persistence process (think of a database),
@@ -216,7 +216,7 @@ What's the resulting common speed?
 |TODO
 |TODO
 
-|Question 12
+|12
 |Regarding performance.
 
 We have a producer (server) and a consumer (client).
@@ -226,7 +226,7 @@ How many kb/sec are transported? How many objects/sec?
 |TODO
 |TODO
 
-|Question 13
+|13
 |Regarding latency.
 
 We have a producer (server) with a Mono (single value) and a consumer (client).
@@ -235,7 +235,7 @@ What's the approx. latency from subscription-time until the value is received?
 |TODO
 |TODO
 
-|Question 14
+|14
 |Regarding errors.
 
 We have a producer (server) with a Flux which delivers first 10 values and
@@ -245,7 +245,7 @@ How does the error arrive at the client? Type, Stacktrace etc?
 |TODO
 |TODO
 
-|Question 15
+|15
 |Regarding errors.
 
 We have a producer (server) with a Flux which delivers first 10 values and
@@ -255,7 +255,7 @@ How does the error arrive at the client? Type, Stacktrace etc?
 |TODO
 |TODO
 
-|Question 16
+|16
 |Regarding errors.
 
 We have a producer (server) which produces an endless stream
@@ -269,7 +269,7 @@ producing values? How many values does the producer (server) produce?
 |TODO
 |TODO
 
-|Question 17
+|17
 |Regarding errors.
 
 Same like question 16. But this time, the client "crashes" (Runtime#halt), instead of the server.
@@ -279,7 +279,7 @@ producing values? How many values does the producer (server) produce?
 |TODO
 |TODO
 
-|Question 18
+|18
 |Regarding errors.
 
 We have a producer (server) which produces an endless stream
