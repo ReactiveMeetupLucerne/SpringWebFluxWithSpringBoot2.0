@@ -7,6 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
@@ -17,7 +18,7 @@ public class ClientApplication {
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        TimeUnit.SECONDS.sleep(10); // keep the JVM alive
+        TimeUnit.SECONDS.sleep(30); // keep the JVM alive
     }
 
     @Bean
@@ -31,6 +32,7 @@ public class ClientApplication {
                     .retrieve()
                     .bodyToFlux(String.class)
                     .take(1000)
+                    .delayElements(Duration.ofMillis(100))
                     .subscribe(
                             System.out::println,
                             Throwable::printStackTrace,

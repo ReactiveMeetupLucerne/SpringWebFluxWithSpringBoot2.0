@@ -1,6 +1,5 @@
 package question1;
 
-import io.reactivex.Single;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +12,12 @@ import java.util.concurrent.TimeUnit;
 @SpringBootApplication
 public class Q1Client {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         new SpringApplicationBuilder(Q1Client.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
+
+        TimeUnit.SECONDS.sleep(100); // keep the JVM alive
     }
 
     @Bean
@@ -27,10 +28,11 @@ public class Q1Client {
             // Just works:
             webClient
                     .get()
-                    .uri("/javabean-field")
+                    .uri("/javabean")
                     .retrieve()
                     .bodyToFlux(JavaBeanFoobar.class)
-                    .subscribe(System.out::println);
+                    .subscribe(System.out::println,
+                            System.err::println);
 
             // Throws exception on the server side:
 
@@ -39,11 +41,8 @@ public class Q1Client {
                     .uri("/private-field")
                     .retrieve()
                     .bodyToFlux(PrivateFieldFoobar.class)
-                    .subscribe(System.out::println);
-
-
-            Single.timer(10, TimeUnit.SECONDS)
-                    .subscribe(ticker -> System.exit(0));
+                    .subscribe(System.out::println,
+                            System.err::println);
         };
     }
 
