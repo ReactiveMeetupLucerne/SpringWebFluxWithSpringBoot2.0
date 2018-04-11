@@ -96,7 +96,7 @@ In the hello world example, there is an object of the type `TextDto` transported
 
 What are the requirements for a data type to be transported? e.g. must implement Serializable?
 or e.g. must follow the JavaBean convention (setter/getter)?
-|It must be Serializable or JavaBean
+|Jackson must support it: JavaBean
 |link:./src/main/java/question1/Q1Client.java[Q1Client.java] link:./src/main/java/question1/server/Q1Server.java[Q1Server.java]
 
 |2
