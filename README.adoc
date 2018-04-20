@@ -161,9 +161,7 @@ When the buffer is not full anymore, the producer continues to produce at full s
 This is kind of "poor man's backpressure": blocking backpressure.
 
 We can monitor the TCP buffers using
-----
-netstat -n -p tcp | grep 0 | grep 8080
-----
+`netstat -n -p tcp \| grep 0 \| grep 8080`
 |link:./src/main/java/question6/client/ClientApplication.java[ClientApplication.java]
  link:./src/main/java/question6/server/ServerApplication.java[ServerApplication.java]
 
