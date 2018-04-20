@@ -155,10 +155,10 @@ The producer works at "full speed".
 
 Does the producer react on this and eventually start producing fewer values per time?
 Do server and client find some common pace?
-|The fast producer reacts on the slow client, but only because the tcp-buffer is full and it blocks.
+|The fast producer reacts on the slow client, but only because the TCP-buffer is full and blocks.
 
 When the buffer is not full anymore, the producer continues to produce at full speed until the buffer is full again.
-This is kind of "poor man's backpressure": blocking backpressure.
+This is kind of "poor man's backpressure": _blocking backpressure_.
 
 We can monitor the TCP buffers using
 `netstat -n -p tcp \| grep 0 \| grep 8080`
