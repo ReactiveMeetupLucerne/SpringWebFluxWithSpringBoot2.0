@@ -107,16 +107,25 @@ In addition to question 1: What mechanism uses Spring WebFlux to marshal/unmarsh
 |TODO
 
 |3
-|Regarding "compose-ability".
+|Regarding "composeability".
 
 Can you create an example showing how to fetch the price for the flight,
 the hotel and the car "in parallel"?
 
 Is this "inter-process" somehow different than in the "inside same process" example
 from link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]?
-|TODO
-|TODO
+|That's simple. From the API perspective there is no difference in "calling something"
+within the same process or some other processes.
 
+A couple of things are interesting in this case where we are calling an second process:
+
+a) WebClient is immutable (see https://stackoverflow.com/a/49107545/1662412), so it is thread-safe and we can
+share it across threads "inside our process"
+
+b) And since WebClient is non-blocking, we don't need to do the subcription on the Mono
+explicitly on a separate thread with e.g. using `subscribeOn(..)` to "make it async".
+|link:./src/main/java/question3/client/ClientApplication.java[ClientApplication.java]
+link:./src/main/java/question3/server/ServerApplication.java[ServerApplication.java]
 |4
 |Regarding cancellation.
 
