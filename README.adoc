@@ -206,8 +206,18 @@ Or some kind of backpressure on the network level (TCP)?
 
 See https://stackoverflow.com/questions/41772711/backpressure-for-rest-endpoints-with-spring-functional-web-framework#comment70845288_41825959
 and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) for some hints.
-|TODO
-|TODO
+|See answer of question 6.
+
+However, there seems to be some activity with "more sophisticated"
+(two-way communication) transport protocols:
+
+https://jira.spring.io/browse/SPR-16751
+https://jira.spring.io/browse/SPR-16358
+https://jira.spring.io/browse/SPR-16466
+https://jira.spring.io/browse/SPR-15776
+
+...
+|
 
 |8
 
