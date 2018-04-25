@@ -226,8 +226,13 @@ Regarding flow-control.
 
 Slow producer (server), fast consumer (client). Is the consumer (client) somehow blocked?
 E.g. a thread wasted?
-|TODO
-|TODO
+|There are no threads in the client blocked by this.
+
+We can't see any blocked threads using e.g. JVisualVM.
+
+"Under the hood" is netty at work, which is async/non-blocking.
+|link:./src/main/java/question9/client/ClientApplication.java[ClientApplication.java]
+ link:./src/main/java/question9/server/ServerApplication.java[ServerApplication.java]
 
 |10
 
