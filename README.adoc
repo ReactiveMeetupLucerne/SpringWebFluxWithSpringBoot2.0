@@ -85,12 +85,12 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 
 === Questions regarding "reactive inter-process communication" between two JVM processes
 
-[cols="1,5,5,2"]
 |===
-|# |Question |Answer |Code example(s)
+|Question |Answer |Code example(s)
 
 |1
-|Regarding serialization.
+
+Regarding serialization.
 
 In the hello world example, there is an object of the type `TextDto` transported between the two processes.
 
@@ -109,14 +109,16 @@ The standard Java serialization using e.g. the `java.io.Serializable` interface 
 |link:./src/main/java/question1/client/Q1Client.java[Q1Client.java] link:./src/main/java/question1/server/Q1Server.java[Q1Server.java]
 
 |2
-|Regarding serialization.
+
+Regarding serialization.
 
 In addition to question 1: What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
 |see answer of question 1
 |
 
 |3
-|Regarding "composeability".
+
+Regarding "composeability".
 
 Can you create an example showing how to fetch the price for the flight,
 the hotel and the car "in parallel"?
@@ -136,7 +138,8 @@ explicitly on a separate thread with e.g. using `subscribeOn(..)` to "make it as
 |link:./src/main/java/question3/client/ClientApplication.java[ClientApplication.java]
 link:./src/main/java/question3/server/ServerApplication.java[ServerApplication.java]
 |4
-|Regarding cancellation.
+
+Regarding cancellation.
 
 A server-side producer creates a Flux with 1'000'000 values. But the client only
 takes 1'000 of them (using the take(1000) operator).
@@ -152,7 +155,8 @@ Works fine!
 |link:./src/main/java/question4/client/ClientApplication.java[ClientApplication.java]
 link:./src/main/java/question4/server/ServerApplication.java[ServerApplication.java]
 |5
-|Regarding timeouts/cancellation.
+
+Regarding timeouts/cancellation.
 
 A server-side producer creates a Mono with 1 value, but the value is produced
 with a delay of 5 seconds.
@@ -171,7 +175,8 @@ We created an issue for this: https://jira.spring.io/browse/SPR-16768
 |link:./src/main/java/question5/client/ClientApplication.java[ClientApplication.java]
 link:./src/main/java/question5/server/ServerApplication.java[ServerApplication.java]
 |6
-|Regarding flow-control.
+
+Regarding flow-control.
 
 There is a fast producer on the server side and a slow client.
 The slow client can only process 1 value every 100ms.
@@ -190,7 +195,8 @@ We can monitor the TCP buffers using
  link:./src/main/java/question6/server/ServerApplication.java[ServerApplication.java]
 
 |7
-|Regarding flow-control.
+
+Regarding flow-control.
 
 How is the flow-control from question 6 implemented?
 
@@ -203,7 +209,8 @@ and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) 
 |TODO
 
 |8
-|Regarding flow-control.
+
+Regarding flow-control.
 
 Assuming there is some kind of buffering used internally as solution in question 6.
 Is there a way to configure the "buffer size"?
@@ -213,7 +220,8 @@ With "buffer size" I think of number of objects or number of bytes on the networ
 |TODO
 
 |9
-|Regarding flow-control.
+
+Regarding flow-control.
 
 Slow producer (server), fast consumer (client). Is the consumer (client) somehow blocked?
 E.g. a thread wasted?
@@ -221,7 +229,8 @@ E.g. a thread wasted?
 |TODO
 
 |10
-|Regarding flow-control.
+
+Regarding flow-control.
 
 A client zips two Flux from a server together. The two Flux
 work on a different speed: One Flux works at full speed, the second Flux
@@ -232,7 +241,8 @@ Does the faster server Flux eventually react on that and start producing fewer v
 |TODO
 
 |11
-|Regarding flow-control.
+
+Regarding flow-control.
 
 We have 3 processes involved: A fake persistence process (think of a database),
 an API gateway process and a client process.
@@ -248,7 +258,8 @@ What's the resulting common speed?
 |TODO
 
 |12
-|Regarding performance.
+
+Regarding performance.
 
 We have a producer (server) and a consumer (client).
 Both working at full speed.
@@ -258,7 +269,8 @@ How many kb/sec are transported? How many objects/sec?
 |TODO
 
 |13
-|Regarding latency.
+
+Regarding latency.
 
 We have a producer (server) with a Mono (single value) and a consumer (client).
 
@@ -267,7 +279,8 @@ What's the approx. latency from subscription-time until the value is received?
 |TODO
 
 |14
-|Regarding errors.
+
+Regarding errors.
 
 We have a producer (server) with a Flux which delivers first 10 values and
 then one error, a RuntimeException("Boom").
@@ -277,7 +290,8 @@ How does the error arrive at the client? Type, Stacktrace etc?
 |TODO
 
 |15
-|Regarding errors.
+
+Regarding errors.
 
 We have a producer (server) with a Flux which delivers first 10 values and
 then one error, an exception with a custom data type "MyRuntimeException("Boom")".
@@ -287,7 +301,8 @@ How does the error arrive at the client? Type, Stacktrace etc?
 |TODO
 
 |16
-|Regarding errors.
+
+Regarding errors.
 
 We have a producer (server) which produces an endless stream
 of values.
@@ -301,7 +316,8 @@ producing values? How many values does the producer (server) produce?
 |TODO
 
 |17
-|Regarding errors.
+
+Regarding errors.
 
 Same like question 16. But this time, the client "crashes" (Runtime#halt), instead of the server.
 
@@ -311,7 +327,8 @@ producing values? How many values does the producer (server) produce?
 |TODO
 
 |18
-|Regarding errors.
+
+Regarding errors.
 
 We have a producer (server) which produces an endless stream
 of values. But after 10 values, it crashes (Runtime#halt).
