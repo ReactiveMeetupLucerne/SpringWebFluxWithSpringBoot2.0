@@ -209,7 +209,7 @@ and https://www.youtube.com/watch?v=oS9w3VenDW0 (watch between 28:20 and 29:20) 
 |See answer of question 6.
 
 However, there seems to be some activity with "more sophisticated"
-(two-way communication) transport protocols:
+(e.g. non-blocking, two-way communication, ...) transport mechanisms:
 
 https://jira.spring.io/browse/SPR-16751
 https://jira.spring.io/browse/SPR-16358
