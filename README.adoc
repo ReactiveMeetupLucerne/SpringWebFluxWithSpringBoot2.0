@@ -94,9 +94,17 @@ or link:./src/main/java/a_intro/RxJavaCodeExamples.java[RxJavaCodeExamples.java]
 
 In the hello world example, there is an object of the type `TextDto` transported between the two processes.
 
-What are the requirements for a data type to be transported? e.g. must implement Serializable?
+What are the requirements for a data type (java class) to be transported? e.g. must implement Serializable?
 or e.g. must follow the JavaBean convention (setter/getter)?
-|Jackson must support it: JavaBean
+|The default serialization/deserialization in Spring Boot 2.0 is https://github.com/FasterXML/jackson-core[Jackson].
+
+So the requirements for a data type (java class) in order to "be transprtable" are, that it *can be handled by Jackson*.
+Jackson supports e.g. classes following the JavaBean convention (getter/setter) out of the box.
+
+For more complicated cases like classes with ignoreable properties, final fields, mutliple constructors, e.g.,
+there are lots of https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations[annotations] to tell Jackson how to deal with it.
+
+The standard Java serialization using e.g. the `java.io.Serializable` interface is not used within Spring WebFlux.
 |link:./src/main/java/question1/Q1Client.java[Q1Client.java] link:./src/main/java/question1/server/Q1Server.java[Q1Server.java]
 
 |2
