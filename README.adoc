@@ -146,15 +146,19 @@ link:./src/main/java/question4/server/ServerApplication.java[ServerApplication.j
 |Regarding timeouts/cancellation.
 
 A server-side producer creates a Mono with 1 value, but the value is produced
-with a delay of 2 seconds.
+with a delay of 5 seconds.
 
 The client aborts its call after 1 second using the timeout operator.
 
-Is the cancellation of the client propagated "in time" to the server?
+Is the cancellation of the client propagated to the server?
 Is the delayed creation of the value on the server-side aborted?
-|TODO
-|TODO
+|There seems to be an issue here.
 
+The cancellation (unsubscribing) due to the timeout is not propagated to the server side in this example.
+
+Altough the cancellation worked in the example for question 4 with many elements, it doesn't seem to work when only one element is in play.
+|link:./src/main/java/question5/client/ClientApplication.java[ClientApplication.java]
+link:./src/main/java/question5/server/ServerApplication.java[ServerApplication.java]
 |6
 |Regarding flow-control.
 
