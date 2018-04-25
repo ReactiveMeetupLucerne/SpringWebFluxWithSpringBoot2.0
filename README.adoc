@@ -102,17 +102,18 @@ So the requirements for a data type (java class) in order to "be transprtable" a
 Jackson supports e.g. classes following the JavaBean convention (getter/setter) out of the box.
 
 For more complicated cases like classes with ignoreable properties, final fields, mutliple constructors, e.g.,
-there are lots of https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations[annotations] to tell Jackson how to deal with it.
+there are lots of https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations[annotations]
+like `@JsonCreator` or `@JsonProperty` to tell Jackson how to deal with it.
 
-The standard Java serialization using e.g. the `java.io.Serializable` interface is not used within Spring WebFlux.
-|link:./src/main/java/question1/Q1Client.java[Q1Client.java] link:./src/main/java/question1/server/Q1Server.java[Q1Server.java]
+The standard Java serialization using e.g. the `java.io.Serializable` interface does NOT come into play within Spring WebFlux.
+|link:./src/main/java/question1/client/Q1Client.java[Q1Client.java] link:./src/main/java/question1/server/Q1Server.java[Q1Server.java]
 
 |2
 |Regarding serialization.
 
 In addition to question 1: What mechanism uses Spring WebFlux to marshal/unmarshal the objects? (e.g. JAX-RS, Jackson, GSON, ...)
-|TODO
-|TODO
+|see answer of question 1
+|
 
 |3
 |Regarding "composeability".

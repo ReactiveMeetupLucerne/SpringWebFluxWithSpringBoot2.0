@@ -4,11 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import question1.JavaBeanFoobar;
-import question1.PrivateFieldFoobar;
+import question1.shared.FinalFieldFoobar;
+import question1.shared.JavaBeanFoobar;
 import reactor.core.publisher.Mono;
 
-@SpringBootApplication
+import java.time.ZonedDateTime;
+
+@SpringBootApplication(scanBasePackages = "question1.server")
 public class Q1Server {
 
     public static void main(String[] args) {
@@ -25,8 +27,8 @@ public class Q1Server {
          * BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS)
          */
         @GetMapping(value = "/private-field")
-        Mono<PrivateFieldFoobar> privateField() {
-            return Mono.just(new PrivateFieldFoobar());
+        Mono<FinalFieldFoobar> privateField() {
+            return Mono.just(new FinalFieldFoobar(ZonedDateTime.now()));
         }
 
         @GetMapping(value = "/javabean")
