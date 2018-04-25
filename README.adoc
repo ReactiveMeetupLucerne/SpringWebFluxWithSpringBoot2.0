@@ -232,7 +232,7 @@ We can't see any blocked threads using e.g. JVisualVM.
 
 "Under the hood" is netty at work, which is async/non-blocking.
 |link:./src/main/java/question9/client/ClientApplication.java[ClientApplication.java]
- link:./src/main/java/question9/server/ServerApplication.java[ServerApplication.java]
+link:./src/main/java/question9/server/ServerApplication.java[ServerApplication.java]
 
 |10
 
@@ -250,18 +250,21 @@ Does the faster server Flux eventually react on that and start producing fewer v
 
 Regarding flow-control.
 
-We have 3 processes involved: A fake persistence process (think of a database),
+We have 3 processes involved: A fake persistence process (think of a database with a reactive REST API),
 an API gateway process and a client process.
 
 The three processes work at different speeds: The client is very slow
-and can only process one value per 100ms. The API gateway process has a bad day
-and can only process one value per 50ms. The fake persistence process works at full speed.
+and can only process one value per 1000ms. The API gateway process has a bad day
+and can only process one value per ms. The fake persistence process works at full speed.
 
 Do the faster producers eventually react on the slower consumers?
 Do the three process find some common speed?
 What's the resulting common speed?
-|TODO
-|TODO
+|Same behaviour as in question 6
+|link:./src/main/java/question11/client/ClientApplication.java[ClientApplication.java]
+link:./src/main/java/question11/apigateway/ServerApplication.java[API Gateway ServerApplication.java]
+link:./src/main/java/question11/fakepersistenceserver/ServerApplication.java[Fake DB ServerApplication.java]
+
 
 |12
 
