@@ -363,4 +363,3 @@ How many values does the client get?
 === Questions regarding "reactive inter-process communication" between a JVM process and a webbrowser process
 
 TODO
-
